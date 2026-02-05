@@ -87,7 +87,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
             </div>
 
             {/* Content Area */}
-            <div className="p-4" style={{ minHeight: '200px' }}>
+            <div className="p-3" style={{ minHeight: '120px' }}>
                 {fileToShow ? (
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="d-flex gap-3 align-items-center">
