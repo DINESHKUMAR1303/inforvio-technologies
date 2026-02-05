@@ -159,8 +159,36 @@ const DocumentUploadPage = () => {
 
             <footer className="p-3 mt-auto border-top bg-white">
                 <Container className="d-flex justify-content-between">
-                    <Button variant="primary" className="px-4" style={{ backgroundColor: 'var(--primary-blue)', borderColor: 'var(--primary-blue)' }}><FaArrowLeft className="me-2" /> Back</Button>
-                    <Button variant="primary" className="px-4" style={{ backgroundColor: 'var(--primary-blue)', borderColor: 'var(--primary-blue)' }}>Next <FaArrowRight className="ms-2" /></Button>
+                    <Button
+                        variant="primary"
+                        className="px-4"
+                        style={{ backgroundColor: 'var(--primary-blue)', borderColor: 'var(--primary-blue)' }}
+                        onClick={() => {
+                            const currentIndex = applicants.findIndex(a => a.id === selectedApplicantId);
+                            if (currentIndex > 0) {
+                                setSelectedApplicantId(applicants[currentIndex - 1].id);
+                            }
+                        }}
+                        disabled={!selectedApplicantId || applicants.findIndex(a => a.id === selectedApplicantId) === 0}
+                    >
+                        <FaArrowLeft className="me-2" /> Back
+                    </Button>
+                    <Button
+                        variant="primary"
+                        className="px-4"
+                        style={{ backgroundColor: 'var(--primary-blue)', borderColor: 'var(--primary-blue)' }}
+                        onClick={() => {
+                            const currentIndex = applicants.findIndex(a => a.id === selectedApplicantId);
+                            if (currentIndex < applicants.length - 1) {
+                                setSelectedApplicantId(applicants[currentIndex + 1].id);
+                            } else {
+                                alert("Submission Successful!");
+                            }
+                        }}
+                        disabled={applicants.length === 0}
+                    >
+                        {selectedApplicantId && applicants.findIndex(a => a.id === selectedApplicantId) === applicants.length - 1 ? 'Finish' : 'Next'} <FaArrowRight className="ms-2" />
+                    </Button>
                 </Container>
             </footer>
 
