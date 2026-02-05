@@ -48,7 +48,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
         <div className="border rounded-3 p-0 bg-white" style={{ borderColor: '#e5e7eb', overflow: 'hidden' }}>
             {/* Top Action Bar Container */}
             <div className="p-3 border-bottom" style={{ borderColor: '#f3f4f6', backgroundColor: '#fff' }}>
-                <div className="d-flex gap-2">
+                <div className="d-flex flex-wrap gap-2">
                     <input
                         type="file"
                         ref={fileInputRef}
@@ -58,7 +58,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                     <Button
                         variant="primary"
                         onClick={handleChooseClick}
-                        className="px-4 fw-bold border-0"
+                        className="px-3 px-sm-4 fw-bold border-0"
                         style={{ backgroundColor: '#3b82f6' }}
                     >
                         <FaPlus className="me-2" size={12} /> Choose
@@ -67,7 +67,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                     <Button
                         variant="primary"
                         onClick={handleUploadClick}
-                        className="px-4 fw-bold border-0"
+                        className="px-3 px-sm-4 fw-bold border-0"
                         disabled={!selectedFile || !!currentFile}
                         style={{ backgroundColor: '#3b82f6', color: 'white' }}
                     >
@@ -77,7 +77,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                     <Button
                         variant="primary"
                         onClick={handleCancelClick}
-                        className="px-4 fw-bold border-0"
+                        className="px-3 px-sm-4 fw-bold border-0"
                         disabled={!selectedFile && !currentFile}
                         style={{ backgroundColor: '#3b82f6', color: 'white' }}
                     >
