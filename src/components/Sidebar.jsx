@@ -38,10 +38,9 @@ const Sidebar = ({ documentTypes, activeType, onSelectType, onAddDocument, uploa
 
             <Button
                 variant="outline-primary"
-                className="w-100 py-2 fw-bold"
+                className="w-100 py-2 fw-bold btn-custom-outline"
                 style={{
-                    borderColor: 'var(--primary-blue)',
-                    color: 'var(--primary-blue)'
+                    // specific style removed in favor of CSS class for hover handling
                 }}
                 onClick={onAddDocument}
             >
