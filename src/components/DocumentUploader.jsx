@@ -69,7 +69,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                         onClick={handleUploadClick}
                         className="px-4 fw-bold border-0"
                         disabled={!selectedFile || !!currentFile}
-                        style={{ backgroundColor: '#60a5fa', color: 'white' }}
+                        style={{ backgroundColor: '#3b82f6', color: 'white' }}
                     >
                         <FaUpload className="me-2" size={12} /> Upload
                     </Button>
@@ -79,7 +79,7 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                         onClick={handleCancelClick}
                         className="px-4 fw-bold border-0"
                         disabled={!selectedFile && !currentFile}
-                        style={{ backgroundColor: '#60a5fa', color: 'white' }}
+                        style={{ backgroundColor: '#3b82f6', color: 'white' }}
                     >
                         <FaTimes className="me-2" size={12} /> Cancel
                     </Button>
@@ -136,9 +136,9 @@ const DocumentUploader = ({ activeType, onUpload, currentFile, onRemove }) => {
                     </div>
                 ) : (
                     <div
-                        className="d-flex flex-column align-items-start justify-content-center text-muted h-100"
+                        className="d-flex flex-column align-items-start justify-content-center h-100"
                     >
-                        {/* Empty State reserved space */}
+                        <p style={{ color: '#3b82f6', margin: 0 }}>Drag and Drop files here.</p>
                     </div>
                 )}
             </div>
